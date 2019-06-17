@@ -50,12 +50,22 @@ class Home extends Component {
         /*  */
     }
 
+    /**
+     * Asset type change handler
+     * @param {*} key 
+     * @param {*} value 
+     */
     changeHandler(key, value) {
         this.setState({
             [key]: value
         });
     }
 
+    /**
+     * Form input change handerl
+     * @param {*} key 
+     * @param {*} value 
+     */
     formChangeHandler(key, value) {
         const formCurrentVal = { ...this.state.apiCapturedDocument };
         formCurrentVal[key] = value;
@@ -66,6 +76,10 @@ class Home extends Component {
         });
     }
 
+    /**
+     * Tab next click handler
+     * @param {*} tab 
+     */
     nextHandler(tab) {
         if (tab == 1) {
             if (this.state.documentType) {
@@ -122,6 +136,10 @@ class Home extends Component {
         }
     }
 
+    /**
+     * Change tab
+     * @param {*} tab 
+     */
     updateTab(tab) {
         this.setState({
             currentTab: tab
@@ -132,6 +150,9 @@ class Home extends Component {
         });
     }
 
+    /**
+     * Render document capture web sdk
+     */
     renderDocumentCaptureSdk() {
         let isBackCapture = false;
         if (this.state.documentType == CONSTANT.DOCUMENT_TYPE.DRIVING_LICENCE
@@ -149,6 +170,7 @@ class Home extends Component {
             firstPlaceholder = CONSTANT.SDK_TITLES.PASSPORT.FIRST_PLACEHOLDER;
         }
 
+        // data-fornix document capture sdk initialization
         this.dataFornixWeb = new DataFornixDC({
             containerId: 'documentCapture',
             token: CONSTANT.SDK_TOKEN,
@@ -176,6 +198,9 @@ class Home extends Component {
         });
     }
 
+    /**
+     * Asset type options here
+     */
     renderDocumentOptions() {
         if (this.state.currentTab == 0) {
             return (
@@ -209,6 +234,9 @@ class Home extends Component {
         return null;
     }
 
+    /**
+     * Document capture sdk container div
+     */
     renderDocumentCapture() {
         if (this.state.currentTab == 1) {
             return (
@@ -225,6 +253,9 @@ class Home extends Component {
         return null;
     }
 
+    /**
+     * Render captured data here
+     */
     renderDocumentCapturedData() {
         if (this.state.currentTab == 2) {
             console.log('this.state.apiCapturedDocument', this.state.apiCapturedDocument)
