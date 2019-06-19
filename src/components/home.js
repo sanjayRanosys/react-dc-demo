@@ -501,6 +501,14 @@ class Home extends Component {
                             </div>
                         )
                     }
+                    {this.state.apiCapturedDocument.user_pic &&
+                        (
+                            <p>
+                                user pic <br />
+                                <a href={this.state.apiCapturedDocument.user_pic} target="_blank"><img src={this.state.apiCapturedDocument.user_pic} /></a>
+                            </p>
+                        )
+                    }
 
                     <div style={{ overflow: 'auto' }}>
                         <div style={{ float: 'right' }}>
