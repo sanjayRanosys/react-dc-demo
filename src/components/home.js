@@ -328,6 +328,14 @@ class Home extends Component {
                             </p>
                         )
                     }
+                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IDENTITY_CARD &&
+                        (
+                            <p className="card_number">
+                                Card number
+                                <input type="text" placeholder="card number" id="card_number" value={this.state.apiCapturedDocument.card_number} onChange={(event) => this.formChangeHandler('card_number', event.target.value)} />
+                            </p>
+                        )
+                    }
                     {this.state.documentType == CONSTANT.DOCUMENT_TYPE.PAN_CARD &&
                         (
                             <p className="pan_number">
