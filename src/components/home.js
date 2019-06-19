@@ -320,6 +320,14 @@ class Home extends Component {
                             </p>
                         )
                     }
+                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IDENTITY_CARD &&
+                        (
+                            <p className="identity_number">
+                                Identity Number Front
+                                <input type="text" placeholder="identity number front" id="identity_number_front" value={this.state.apiCapturedDocument.identity_number_front} onChange={(event) => this.formChangeHandler('identity_number_front', event.target.value)} />
+                            </p>
+                        )
+                    }
                     {this.state.documentType == CONSTANT.DOCUMENT_TYPE.PAN_CARD &&
                         (
                             <p className="pan_number">
@@ -333,6 +341,14 @@ class Home extends Component {
                             <p className="visa_number">
                                 VISA Number
                                 <input type="text" placeholder="visa number" id="visa_number" value={this.state.apiCapturedDocument.visa_number} onChange={(event) => this.formChangeHandler('visa_number', event.target.value)} />
+                            </p>
+                        )
+                    }
+                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IDENTITY_CARD &&
+                        (
+                            <p className="name_front">
+                                Front Name
+                                <input type="text" placeholder="front name" id="name_front" value={this.state.apiCapturedDocument.name_front} onChange={(event) => this.formChangeHandler('name_front', event.target.value)} />
                             </p>
                         )
                     }
@@ -436,6 +452,14 @@ class Home extends Component {
                         </p>
                     }
 
+                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IDENTITY_CARD &&
+                        (
+                            <p className="nationality_front">
+                                Nationality Front
+                            <input type="text" placeholder="nationality front" id="nationality_front" value={this.state.apiCapturedDocument.nationality_front} onChange={(event) => this.formChangeHandler('nationality_front', event.target.value)} />
+                            </p>
+                        )
+                    }
                     {(this.state.documentType == CONSTANT.DOCUMENT_TYPE.IS_RIGHT_TO_WORK || this.state.apiCapturedDocument.nationality) &&
                         (
                             <p>
