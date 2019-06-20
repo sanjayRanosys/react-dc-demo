@@ -261,6 +261,21 @@ class Home extends Component {
         return null
     }
 
+    renderConfidenceScore(data) {
+        if (data && Array.isArray(data)) {
+            return (
+                <ol>
+                    {data.map((value, index) => {
+                        return Object.keys(value).map((innerVal, innerIndex) => {
+                            return <li key={index}>{innerVal} ==> {value[innerVal]}</li>
+                        })
+                    })}
+                </ol>
+            );
+        }
+        return null
+    }
+
     /**
      * Document capture sdk container div
      */
@@ -522,6 +537,13 @@ class Home extends Component {
                                 <a href={this.state.apiCapturedDocument.user_pic} target="_blank"><img src={this.state.apiCapturedDocument.user_pic} /></a>
                             </p>
                         )
+                    }
+
+                    {this.state.apiCapturedDocument.confidence_score !== undefined &&
+                        <div className="confidence_score">
+                            Confidence Score
+                            {this.renderConfidenceScore(this.state.apiCapturedDocument.confidence_score)}
+                        </div>
                     }
 
                     <div style={{ overflow: 'auto' }}>
