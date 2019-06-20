@@ -476,6 +476,12 @@ class Home extends Component {
                             </p>
                         )
                     }
+                    {this.state.apiCapturedDocument.nationality_code !== undefined &&
+                        <p className="nationality_code">
+                            Nationality Code
+                            <input placeholder="nationality_code" type="text" id="nationality_code" value={this.state.apiCapturedDocument.nationality_code} onChange={(event) => this.formChangeHandler('nationality_code', event.target.value)} />
+                        </p>
+                    }
 
                     {this.state.apiCapturedDocument.mrz_first &&
                         (
