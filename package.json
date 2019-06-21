@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "data-fornix-web-api": "0.0.3",
+    "data-fornix-web-api": "0.0.4",
     "data-fornix-web-dc": "0.0.4",
     "i": "^0.3.6",
     "npm": "^6.9.0",
