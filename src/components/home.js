@@ -560,6 +560,9 @@ class Home extends Component {
         return (
             <div>
                 <label className="page-title">Data Fornix: Document Capture Demo</label>
+                <div className="sidebar">
+                    
+                </div>
                 <div className="sdk-container">
                     {this.renderDocumentOptions()}
                     {this.renderDocumentCapture()}
